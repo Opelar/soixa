@@ -55,7 +55,7 @@ function xhrAdapter(config) {
     xhr.timeout = config.timeout
 
     xhr.onreadystatechange = () => {
-      if (xhr && xhr.readyState !== 4) {
+      if (xhr && xhr.readyState === 4) {
         const responseData = !config.responseType || config.responseType === 'text'
           ? xhr.responseText
           : xhr.response
