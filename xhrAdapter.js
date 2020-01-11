@@ -25,7 +25,7 @@ function xhrAdapter(config) {
     let requestUrl = `${config.path}?`
 
     if (FormData && requestData instanceof FormData) {
-      Reflect.deleteProperty(requestData, 'Content-Type')
+      Reflect.deleteProperty(requestHeaders, 'Content-Type')
     }
 
     if (config.auth) {
